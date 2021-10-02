@@ -9,4 +9,8 @@ module.exports = (app) => {
     app.post('/events/hourly', rateLimitter, eventsController.hourlyEventsForDate, queryHandler.fetchRows);
 
     app.get('/events/daily', rateLimitter, eventsController.daily, queryHandler.fetchRows);
+
+    app.get('/events-with-stats/hourly', rateLimitter, eventsController.hourlyWithStats, queryHandler.fetchRows);
+
+    app.get('/events-with-stats/daily', rateLimitter, eventsController.dailyWithStats, queryHandler.fetchRows);
 };
