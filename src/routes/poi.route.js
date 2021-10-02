@@ -6,4 +6,6 @@ module.exports = (app) => {
 
     app.get('/poi', rateLimitter, poiController.getPoi, queryHandler.fetchRows);
 
+    app.get('/poi-with-events', rateLimitter, poiController.poiWithStatsAndEvents, queryHandler.fetchRows);
+
 };
